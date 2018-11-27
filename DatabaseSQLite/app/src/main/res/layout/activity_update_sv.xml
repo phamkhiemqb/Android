@@ -6,6 +6,30 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="16dp"
+            android:paddingLeft="10dp"
+            android:textStyle="bold"
+            android:textColor="#00f"
+            android:text="Số TT"/>
+        <EditText
+            android:id="@+id/txt_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:textSize="16dp"
+            android:paddingLeft="5dp"
+            android:editable="false"
+            tools:ignore="Deprecated" />
+    </LinearLayout>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -76,7 +100,7 @@
             android:paddingLeft="10dp"
             android:textStyle="bold"
             android:textColor="#00f"
-            android:text="Số ĐT"/>
+            android:text="Giới tính"/>
         <EditText
             android:id="@+id/txt_phone"
             android:layout_width="0dp"
@@ -88,34 +112,17 @@
             />
     </LinearLayout>
     <Button
-        android:id="@+id/btn_add"
+        android:id="@+id/btn_save"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:textStyle="bold"
         android:textColor="#630000"
         android:layout_gravity="center_horizontal"
-        android:text="Thêm"/>
+        android:text="Lưu"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#999"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="Danh Sách Thông Tin Sinh Viên"
-        android:layout_gravity="center_horizontal"
-        android:textStyle="bold"
-        android:textColor="#00f"
-        android:textSize="18dp"/>
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/list_sv"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="5dp">
-
-    </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>

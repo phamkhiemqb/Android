@@ -1,23 +1,33 @@
 package p.pklovestar.databasesqlite;
 
-public class Sinhvien {
+import java.io.Serializable;
+
+public class Sinhvien implements Serializable {
     int id;
-    String name,address, sex;
+    String name, address, phone;
 
-    public Sinhvien(){}
+    public Sinhvien() {
+    }
 
-    public Sinhvien(int id, String name, String address, String sex) {
+    public Sinhvien(String name, String address, String phone) {
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+    }
+
+    public Sinhvien(int id, String name, String address, String phone) {
         this.id = id;
         this.name = name;
         this.address = address;
-        this.sex = sex;
-
+        this.phone = phone;
     }
 
-    public Sinhvien(String name, String address, String sex) {
-        this.name = name;
-        this.address = address;
-        this.sex = sex;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -36,19 +46,11 @@ public class Sinhvien {
         this.address = address;
     }
 
-    public String getSex() {
-        return sex;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }

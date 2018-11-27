@@ -17,9 +17,17 @@ import p.pklovestar.databasesqlite.Sinhvien;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     Context mContext;
     List<Sinhvien> mSinhvien;
+    OnItemClickListener onItemClick;
+    public interface OnItemClickListener {
+        void onItemClick(View itemView, int position);
+    }
+
     public MyAdapter(Context context, List<Sinhvien> sinhvien){
         this.mContext = context;
         this.mSinhvien = sinhvien;
+    }
+    public void setOnLongClickListener(OnItemClickListener onItemClickListener){
+        this.onItemClick = onItemClickListener;
     }
 
     @NonNull
@@ -27,6 +35,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         LayoutInflater layoutInflater = LayoutInflater.from(viewGroup.getContext());
         View view = layoutInflater.inflate(R.layout.item_sv,viewGroup,false);
+
 
         return new ViewHolder(view);
     }
@@ -36,7 +45,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         viewHolder.id.setText(String.valueOf(mSinhvien.get(i).getId()));
         viewHolder.name.setText(mSinhvien.get(i).getName().toString());
         viewHolder.address.setText(mSinhvien.get(i).getAddress().toString());
-        viewHolder.sex.setText(mSinhvien.get(i).getSex().toString());
+        viewHolder.phone.setText(mSinhvien.get(i).getPhone().toString());
 
     }
 
@@ -46,17 +55,26 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView id,name,address,sex;
+        TextView id,name,address,phone;
 
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull final View itemView) {
             super(itemView);
+
             id =itemView.findViewById(R.id.txt_it_id);
             name =itemView.findViewById(R.id.txt_it_name);
             address=itemView.findViewById(R.id.txt_it_address);
-            sex=itemView.findViewById(R.id.txt_it_sex);
+            phone=itemView.findViewById(R.id.txt_it_phone);
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    onItemClick.onItemClick(itemView,getLayoutPosition());
+                    return false;
+                }
+            });
         }
     }
+
 
 }
 
