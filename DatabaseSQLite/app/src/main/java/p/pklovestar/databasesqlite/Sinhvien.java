@@ -3,8 +3,8 @@ package p.pklovestar.databasesqlite;
 import java.io.Serializable;
 
 public class Sinhvien implements Serializable {
-    int id;
-    String name, address, phone;
+    private int id;
+    private String name, address, phone;
 
     public Sinhvien() {
     }

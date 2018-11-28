@@ -9,24 +9,22 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
-import java.util.ArrayList;
 import java.util.List;
 
 import p.pklovestar.databasesqlite.Adapter.MyAdapter;
 import p.pklovestar.databasesqlite.Database.TableSinhvien;
 
 public class MainActivity extends AppCompatActivity {
-    RecyclerView recyclerView;
-    List<Sinhvien> listSV;
-    MyAdapter myAdapter;
-    Button btnAdd;
-    public final int INTENT01 = 99;
-    Sinhvien sv2;
+    private RecyclerView recyclerView;
+    private List<Sinhvien> listSV;
+    private MyAdapter myAdapter;
+    private Button btnAdd;
+    private final int INTENT01 = 99;
+    private Sinhvien sv2;
     int pos;
-    EditText edName,edAddress,edPhone;
-    Intent intent1;
-    TableSinhvien tableSinhvien;
+    private EditText edName,edAddress,edPhone;
+    private Intent intent1;
+    private TableSinhvien tableSinhvien;
 
 
     @Override
@@ -36,9 +34,7 @@ public class MainActivity extends AppCompatActivity {
             Bundle bundle1 = data.getBundleExtra("sv1");
             sv2 = (Sinhvien) bundle1.getSerializable("sv1");
             tableSinhvien.UpdateSV(sv2);
-            listSV.clear();
-            listSV.addAll(tableSinhvien.getDataTable());
-            myAdapter.notifyDataSetChanged();
+            dataChange();
 
 
         }
@@ -57,8 +53,27 @@ public class MainActivity extends AppCompatActivity {
         myAdapter = new MyAdapter(MainActivity.this, listSV);
 
         recycle();
-        editClickItem();
         clickAdd();
+        myAdapter.setEditClick(new MyAdapter.OnItemClickEdit() {
+            @Override
+            public void onItemClick(View itemView, int position) {
+                pos= position;
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("sv1",listSV.get(position));
+                intent1.putExtra("sv1",bundle);
+                startActivityForResult(intent1,INTENT01);
+            }
+        });
+        myAdapter.setDeleteClick(new MyAdapter.OnItemClickDelete() {
+            @Override
+            public void onItemClick(View itemView, int position) {
+                Sinhvien sinhvien = listSV.get(position);
+                tableSinhvien.DeleteSV(sinhvien.getId());
+                dataChange();
+
+            }
+        });
+
 
     }
     public Sinhvien getText(){
@@ -79,34 +94,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    public void editClickItem(){
-        myAdapter.setEditClick(new MyAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(View itemView, int position) {
-                pos= position;
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("sv1",listSV.get(position));
-                intent1.putExtra("sv1",bundle);
-                startActivityForResult(intent1,INTENT01);
-            }
-        });
-
-
-    }
-    public void deleteClickItem(){
-        myAdapter.setDeleteClick(new MyAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(View itemView, int position) {
-                tableSinhvien.DeleteSV(position);
-                listSV.clear();
-                listSV.addAll(tableSinhvien.getDataTable());
-                myAdapter.notifyDataSetChanged();
-
-            }
-        });
-
-
-    }
     public void recycle(){
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -120,12 +107,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 tableSinhvien.addSinhVien(getText());
-                listSV.clear();
-                listSV.addAll(tableSinhvien.getDataTable());
-                myAdapter.notifyDataSetChanged();
+                dataChange();
 
 
             }
         });
+    }
+    public void dataChange(){
+        listSV.clear();
+        listSV.addAll(tableSinhvien.getDataTable());
+        myAdapter.notifyDataSetChanged();
     }
 }

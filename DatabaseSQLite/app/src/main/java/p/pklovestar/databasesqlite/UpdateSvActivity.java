@@ -9,10 +9,16 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class UpdateSvActivity extends AppCompatActivity{
-    Button btnSave;
-    TextView tvID,tvName,tvAddress,tvSex;
-    Sinhvien sv1;
-    public final int INTENT01 = 99;
+    private Button btnSave;
+    private TextView tvID,tvName,tvAddress,tvSex;
+    private Sinhvien sv1;
+    private final int INTENT01 = 99;
+    private Bundle bundle;
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -20,7 +26,7 @@ public class UpdateSvActivity extends AppCompatActivity{
         setContentView(R.layout.activity_update_sv);
         findID();
         final Intent intent = getIntent();
-        final Bundle bundle = intent.getBundleExtra("sv1");
+        bundle = intent.getBundleExtra("sv1");
         sv1= (Sinhvien) bundle.getSerializable("sv1");
         setText();
         btnSave.setOnClickListener(new View.OnClickListener() {

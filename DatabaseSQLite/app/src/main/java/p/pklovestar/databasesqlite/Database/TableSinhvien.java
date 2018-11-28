@@ -97,10 +97,9 @@ public class TableSinhvien extends SQLiteOpenHelper {
 
 
     }
-    public void DeleteSV(int id){
+    public int DeleteSV(int id){
         SQLiteDatabase db = getWritableDatabase();
-        db.delete(TABLE_NAME,ID+"=?",new String[]{String.valueOf(id)});
-        db.close();
+        return db.delete(TABLE_NAME,ID+"=?",new String[]{String.valueOf(id)});
 
     }
 }

@@ -71,6 +71,7 @@
     <ImageView
         android:id="@+id/btn_it_Delete"
         android:layout_centerVertical="true"
+        android:alpha="0.1"
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp"
         android:layout_width="25dp"
@@ -80,6 +81,7 @@
     <ImageView
         android:id="@+id/btn_it_Edit"
         android:layout_width="25dp"
+        android:alpha="0.1"
         android:layout_height="25dp"
         android:layout_marginRight="10dp"
         android:layout_toLeftOf="@+id/btn_it_Delete"
