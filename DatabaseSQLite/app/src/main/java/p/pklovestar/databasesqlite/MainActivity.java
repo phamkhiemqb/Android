@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     Sinhvien sv2;
     int pos;
     EditText edName,edAddress,edPhone;
+    Intent intent1;
+    TableSinhvien tableSinhvien;
 
 
     @Override
@@ -33,8 +35,11 @@ public class MainActivity extends AppCompatActivity {
         if(requestCode==INTENT01){
             Bundle bundle1 = data.getBundleExtra("sv1");
             sv2 = (Sinhvien) bundle1.getSerializable("sv1");
-            listSV.set(pos,sv2);
+            tableSinhvien.UpdateSV(sv2);
+            listSV.clear();
+            listSV.addAll(tableSinhvien.getDataTable());
             myAdapter.notifyDataSetChanged();
+
 
         }
 
@@ -45,45 +50,15 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final Intent intent1 = new Intent(MainActivity.this,UpdateSvActivity.class);
+        tableSinhvien = new TableSinhvien(MainActivity.this);
 
-        final TableSinhvien tableSinhvien = new TableSinhvien(MainActivity.this);
-
-
-
-        edName = findViewById(R.id.txt_name);
-        edAddress = findViewById(R.id.txt_address);
-        edPhone = findViewById(R.id.txt_phone);
-        recyclerView = findViewById(R.id.list_sv);
-        listSV = new ArrayList<Sinhvien>();
-        btnAdd = findViewById(R.id.btn_add);
+        khoitao();
+        listSV = tableSinhvien.getDataTable();
         myAdapter = new MyAdapter(MainActivity.this, listSV);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        recyclerView.setLayoutManager(layoutManager);
-        myAdapter.notifyDataSetChanged();
-        recyclerView.setAdapter(myAdapter);
-        myAdapter.setOnLongClickListener(new MyAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(View itemView, int position) {
 
-                pos= position;
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("sv1",listSV.get(position));
-                intent1.putExtra("sv1",bundle);
-                startActivityForResult(intent1,INTENT01);
-            }
-        });
-        btnAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tableSinhvien.addSinhVien(getText());
-
-            }
-        });
-
-
-
+        recycle();
+        editClickItem();
+        clickAdd();
 
     }
     public Sinhvien getText(){
@@ -94,7 +69,63 @@ public class MainActivity extends AppCompatActivity {
         return sv2;
 
     }
+    public void khoitao(){
+        edName = findViewById(R.id.txt_name);
+        edAddress = findViewById(R.id.txt_address);
+        edPhone = findViewById(R.id.txt_phone);
+        recyclerView = findViewById(R.id.list_sv);
+        btnAdd = findViewById(R.id.btn_add);
+        intent1 = new Intent(MainActivity.this,UpdateSvActivity.class);
 
 
+    }
+    public void editClickItem(){
+        myAdapter.setEditClick(new MyAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View itemView, int position) {
+                pos= position;
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("sv1",listSV.get(position));
+                intent1.putExtra("sv1",bundle);
+                startActivityForResult(intent1,INTENT01);
+            }
+        });
 
+
+    }
+    public void deleteClickItem(){
+        myAdapter.setDeleteClick(new MyAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View itemView, int position) {
+                tableSinhvien.DeleteSV(position);
+                listSV.clear();
+                listSV.addAll(tableSinhvien.getDataTable());
+                myAdapter.notifyDataSetChanged();
+
+            }
+        });
+
+
+    }
+    public void recycle(){
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(layoutManager);
+        myAdapter.notifyDataSetChanged();
+        recyclerView.setAdapter(myAdapter);
+    }
+    public void clickAdd(){
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tableSinhvien.addSinhVien(getText());
+                listSV.clear();
+                listSV.addAll(tableSinhvien.getDataTable());
+                myAdapter.notifyDataSetChanged();
+
+
+            }
+        });
+    }
 }

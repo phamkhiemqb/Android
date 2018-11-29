@@ -6,7 +6,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -17,7 +19,7 @@ import p.pklovestar.databasesqlite.Sinhvien;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     Context mContext;
     List<Sinhvien> mSinhvien;
-    OnItemClickListener onItemClick;
+    OnItemClickListener onItemClickListener;
     public interface OnItemClickListener {
         void onItemClick(View itemView, int position);
     }
@@ -26,8 +28,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         this.mContext = context;
         this.mSinhvien = sinhvien;
     }
-    public void setOnLongClickListener(OnItemClickListener onItemClickListener){
-        this.onItemClick = onItemClickListener;
+    public void setEditClick(OnItemClickListener onItemClickListener){
+        this.onItemClickListener = onItemClickListener;
+    }
+    public void setDeleteClick(OnItemClickListener onItemClickListener){
+        this.onItemClickListener = onItemClickListener;
     }
 
     @NonNull
@@ -41,12 +46,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull final ViewHolder viewHolder, int i) {
         viewHolder.id.setText(String.valueOf(mSinhvien.get(i).getId()));
         viewHolder.name.setText(mSinhvien.get(i).getName().toString());
         viewHolder.address.setText(mSinhvien.get(i).getAddress().toString());
         viewHolder.phone.setText(mSinhvien.get(i).getPhone().toString());
-
     }
 
     @Override
@@ -56,6 +60,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView id,name,address,phone;
+        ImageView btnEdit,btnDelate;
 
 
         public ViewHolder(@NonNull final View itemView) {
@@ -65,13 +70,22 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             name =itemView.findViewById(R.id.txt_it_name);
             address=itemView.findViewById(R.id.txt_it_address);
             phone=itemView.findViewById(R.id.txt_it_phone);
-            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            btnEdit = itemView.findViewById(R.id.btn_it_Edit);
+            btnDelate = itemView.findViewById(R.id.btn_it_Delete);
+            btnEdit.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public boolean onLongClick(View v) {
-                    onItemClick.onItemClick(itemView,getLayoutPosition());
-                    return false;
+                public void onClick(View v) {
+                    onItemClickListener.onItemClick(itemView, getAdapterPosition());
                 }
             });
+            btnDelate.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onItemClickListener.onItemClick(itemView,getAdapterPosition());
+                }
+            });
+
+
         }
     }
 
