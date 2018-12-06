@@ -36,6 +36,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 DownloadImage downloadImage= new DownloadImage();
                 downloadImage.execute(edtUrl.getText().toString());
+                downloadImage.reTurnBitmap(new DownloadImage.KqBitmap() {
+                    @Override
+                    public void hinhBitmap(Bitmap bitmap) {
+
+                        if(bitmap!=null){
+                            imgHinh.setImageBitmap(bitmap);
+                        }
+                    }
+                });
+
 
             }
         });
@@ -51,48 +61,5 @@ public class MainActivity extends AppCompatActivity {
         imgHinh = findViewById(R.id.img_hinh);
 
     }
-    public class DownloadImage extends AsyncTask<String,Void,Bitmap> {
-        Bitmap mBitmap = null;
-
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-
-        }
-
-        @Override
-        protected Bitmap doInBackground(String... strings) {
-            try {
-                URL url = new URL(strings[0]);
-                InputStream inputStream = url.openConnection().getInputStream();
-                mBitmap = BitmapFactory.decodeStream(inputStream);
-
-
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return mBitmap;
-        }
-
-        @Override
-        protected void onPostExecute(Bitmap bitmap) {
-            super.onPostExecute(bitmap);
-            imgHinh.setImageBitmap(mBitmap);
-
-
-        }
-
-        @Override
-        protected void onProgressUpdate(Void... values) {
-            super.onProgressUpdate(values);
-        }
-    }
-
-
-
-
 }
 

@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#3371be">
 
     <ProgressBar
         android:id="@+id/pb_load"
@@ -21,7 +22,7 @@
             android:layout_height="wrap_content"
             android:text="Nhập URL hình ảnh"
             android:layout_marginLeft="10dp"
-            android:textColor="#00f"
+            android:textColor="#ffae00"
             />
         <EditText
             android:id="@+id/txt_url"
@@ -45,9 +46,9 @@
 
     <ImageView
         android:id="@+id/img_hinh"
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:layout_gravity="center_horizontal"/>
 
 
