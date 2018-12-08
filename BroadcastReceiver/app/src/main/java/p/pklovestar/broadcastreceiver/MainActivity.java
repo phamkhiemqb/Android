@@ -1,5 +1,6 @@
 package p.pklovestar.broadcastreceiver;
 
+import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         receiver = new NetworkChangeReceiver();
-        final IntentFilter filter = new IntentFilter("10 phan tram");
+        final IntentFilter filter = new IntentFilter("phantram");
         registerReceiver(receiver, filter);
     }
 
@@ -19,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Intent intent = new Intent(MainActivity.this, MyIntentService.class);
+        startService(intent);
 
     }
     @Override
