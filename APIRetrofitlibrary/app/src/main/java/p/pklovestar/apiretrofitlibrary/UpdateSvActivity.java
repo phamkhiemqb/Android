@@ -10,8 +10,8 @@ import android.widget.TextView;
 
 public class UpdateSvActivity extends AppCompatActivity{
     private Button btnSave;
-    private TextView tvID,tvName,tvAddress,tvSex;
-    private Sinhvien sv1;
+    private TextView tvName,tvPrice;
+    private Produce pr1;
     private final int INTENT01 = 99;
     private Bundle bundle;
 
@@ -26,37 +26,36 @@ public class UpdateSvActivity extends AppCompatActivity{
         setContentView(R.layout.activity_update_sv);
         findID();
         final Intent intent = getIntent();
-        bundle = intent.getBundleExtra("sv1");
-        sv1= (Sinhvien) bundle.getSerializable("sv1");
+        bundle = intent.getBundleExtra("pr");
+        pr1= (Produce) bundle.getSerializable("pr");
         setText();
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                getText();
-                bundle.putSerializable("sv1",sv1);
-                intent.putExtra("sv1",bundle);
+                bundle.putSerializable("pr1",getText());
+                intent.putExtra("pr1",bundle);
                 setResult(INTENT01,intent);
                 finish();
             }
         });
     }
-    void getText(){
-        sv1.setName(tvName.getText().toString());
-        sv1.setAddress(tvAddress.getText().toString());
-        sv1.setPhone(tvSex.getText().toString());
+    Produce getText(){
+        Produce pr2 = new Produce();
+        pr2.setId(null);
+        pr2.setProduce(tvName.getText().toString());
+        pr2.setPrice(Integer.parseInt(tvPrice.getText().toString()));
+        return pr2;
+
     }
-    void setText(){
-        tvID.setText(String.valueOf(sv1.getId()));
-        tvName.setText(sv1.getName().toString());
-        tvAddress.setText(sv1.getAddress().toString());
-        tvSex.setText(sv1.getPhone().toString());
+    void setText() {
+        tvName.setText(pr1.getProduce().toString());
+        tvPrice.setText(pr1.getPrice().toString());
     }
+
     void findID(){
         btnSave = findViewById(R.id.btn_save);
-        tvID = findViewById(R.id.txt_id);
-        tvName = findViewById(R.id.txt_name);
-        tvAddress = findViewById(R.id.txt_address);
-        tvSex = findViewById(R.id.txt_phone);
+        tvName = findViewById(R.id.txt_name1);
+        tvPrice = findViewById(R.id.txt_price1);
     }
 }
+

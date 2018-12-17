@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 if(response.isSuccessful()) {
                     SongList list = response.body();
                     for(int i=0;i<list.getData().size();i++){
-                        Log.d("Song", list.getData().get(i).getSong());
+                        Log.d("Song", list.getData().get(i).getUrlSong());
                     }
 
                 }else{

@@ -22,7 +22,7 @@
             android:paddingLeft="10dp"
             android:textStyle="bold"
             android:textColor="#00f"
-            android:text="Họ tên"/>
+            android:text="Bài hát"/>
         <EditText
             android:id="@+id/txt_name"
             android:layout_width="0dp"
@@ -30,7 +30,7 @@
             android:layout_weight="3"
             android:textSize="16dp"
             android:paddingLeft="5dp"
-            android:hint="Nguyễn Văn A"
+            android:hint="Wave"
             />
     </LinearLayout>
     <TextView
@@ -49,44 +49,18 @@
             android:textStyle="bold"
             android:textColor="#00f"
             android:paddingLeft="10dp"
-            android:text="Địa chỉ"/>
+            android:text="Price"/>
         <EditText
-            android:id="@+id/txt_address"
+            android:id="@+id/txt_price"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:textSize="16dp"
             android:paddingLeft="5dp"
-            android:hint="Đà Nẵng"
+            android:hint="500000"
             />
     </LinearLayout>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#999"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="16dp"
-            android:paddingLeft="10dp"
-            android:textStyle="bold"
-            android:textColor="#00f"
-            android:text="Số ĐT"/>
-        <EditText
-            android:id="@+id/txt_phone"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:textSize="16dp"
-            android:paddingLeft="5dp"
-            android:hint="0123456789"
-            />
-    </LinearLayout>
+
     <Button
         android:id="@+id/btn_add"
         android:layout_width="wrap_content"
@@ -104,7 +78,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="Danh Sách Thông Tin Sinh Viên"
+        android:text="Danh Sách Sản Phẩm"
         android:layout_gravity="center_horizontal"
         android:textStyle="bold"
         android:textColor="#00f"

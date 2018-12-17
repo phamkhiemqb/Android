@@ -13,11 +13,11 @@ import android.widget.TextView;
 import java.util.List;
 
 import p.pklovestar.apiretrofitlibrary.R;
-import p.pklovestar.apiretrofitlibrary.Sinhvien;
+import p.pklovestar.apiretrofitlibrary.Produce;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private Context mContext;
-    private List<Sinhvien> mSinhvien;
+    private List<Produce> listProduce;
     private OnItemClickEdit onItemClickEdit;
     private OnItemClickDelete onItemClickDelete;
     public interface OnItemClickEdit {
@@ -27,9 +27,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         void onItemClick(View itemView, int position);
     }
 
-    public MyAdapter(Context context, List<Sinhvien> sinhvien){
+    public MyAdapter(Context context, List<Produce> listProduce){
         this.mContext = context;
-        this.mSinhvien = sinhvien;
+        this.listProduce = listProduce;
     }
     public void setEditClick(OnItemClickEdit onItemClickListener){
         this.onItemClickEdit = onItemClickListener;
@@ -50,30 +50,29 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, int i) {
-        viewHolder.id.setText(String.valueOf(mSinhvien.get(i).getId()));
-        viewHolder.name.setText(mSinhvien.get(i).getName().toString());
-        viewHolder.address.setText(mSinhvien.get(i).getAddress().toString());
-        viewHolder.phone.setText(mSinhvien.get(i).getPhone().toString());
+        viewHolder.name.setText(listProduce.get(i).getProduce().toString());
+        viewHolder.price.setText(String.valueOf(listProduce.get(i).getPrice()));
 
     }
 
     @Override
     public int getItemCount() {
-        return mSinhvien.size();
+        if(listProduce!=null)
+            return this.listProduce.size();
+        else return 0;
+
+
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView id,name,address,phone;
+        TextView name, price;
         ImageView btnEdit,btnDelate;
 
 
         public ViewHolder(@NonNull final View itemView) {
             super(itemView);
-
-            id =itemView.findViewById(R.id.txt_it_id);
             name =itemView.findViewById(R.id.txt_it_name);
-            address=itemView.findViewById(R.id.txt_it_address);
-            phone=itemView.findViewById(R.id.txt_it_phone);
+            price=itemView.findViewById(R.id.txt_it_price);
             btnEdit = itemView.findViewById(R.id.btn_it_Edit);
             btnDelate = itemView.findViewById(R.id.btn_it_Delete);
 

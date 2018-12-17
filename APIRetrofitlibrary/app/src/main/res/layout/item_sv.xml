@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <TextView
+    android:layout_height="wrap_content"
+    android:paddingLeft="5dp">
+    <ImageView
         android:layout_width="60dp"
         android:layout_height="62dp"
         android:id="@+id/txt_it_id"
-        android:text="1"
         android:gravity="center"
         android:textSize="40dp"
         android:textColor="#df5600"
-        android:background="#a0ddef"
+        android:src="@drawable/ic_launcher_background"
 
         />
     <TextView
@@ -30,6 +30,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:layout_marginTop="9dp"
             android:id="@+id/txt_it_name"
             android:paddingLeft="5dp"
             android:textStyle="bold"
@@ -37,27 +38,34 @@
             android:textSize="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nguyễn Văn A" />
-        <TextView
-            android:id="@+id/txt_it_address"
-            android:paddingLeft="5dp"
-            android:textStyle="bold"
-            android:textColor="#943700"
-            android:textSize="16dp"
+            android:text="Alpha" />
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Đà Nẵng"
-            />
-        <TextView
-            android:id="@+id/txt_it_phone"
-            android:paddingLeft="5dp"
-            android:textStyle="bold"
-            android:textColor="#943700"
-            android:textSize="16dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0123456789"
-            />
+            android:orientation="horizontal"
+            android:layout_marginTop="3dp">
+            <TextView
+                android:paddingLeft="5dp"
+                android:textStyle="bold"
+                android:textColor="#943700"
+                android:textSize="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Giá: "
+                />
+            <TextView
+                android:id="@+id/txt_it_price"
+                android:paddingLeft="5dp"
+                android:textStyle="italic"
+                android:textColor="#943700"
+                android:textSize="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6000000"
+                />
+
+        </LinearLayout>
+
 
 
 
