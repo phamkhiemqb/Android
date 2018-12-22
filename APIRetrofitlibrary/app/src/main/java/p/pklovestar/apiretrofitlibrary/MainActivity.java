@@ -25,7 +25,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
-    private List<Produce> listProduce;
+    private ArrayList<Produce> listProduce;
     private MyAdapter myAdapter;
     private Button btnAdd;
     private final int INTENT01 = 99;
@@ -61,36 +61,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         khoitao();
+
+        retrofit();
         myAdapter = new MyAdapter(MainActivity.this, listProduce);
-        retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        myAPIclass= retrofit.create(APIClass.class);
-        myAPIclass.getListProducer().enqueue(new Callback<ListProduce>() {
-            @Override
-            public void onResponse(Call<ListProduce> call, Response<ListProduce> response) {
-                if(response.isSuccessful()) {
-                    ListProduce list = response.body();
-                    list = (ListProduce) listProduce;
-                    myAdapter.notifyDataSetChanged();
-
-                }else{
-                    Toast.makeText(MainActivity.this, "error",Toast.LENGTH_SHORT).show();
-                }
-
-
-            }
-
-            @Override
-            public void onFailure(Call<ListProduce> call, Throwable t) {
-
-            }
-        });
-
-
-
+        for(int i=0;i<listProduce.size();i++){
+            Log.d("Song", listProduce.get(i).getProduce());
+        }
         recycle();
         clickAdd();
         myAdapter.setEditClick(new MyAdapter.OnItemClickEdit() {
@@ -107,6 +83,37 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    private void retrofit() {
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+
+        myAPIclass= retrofit.create(APIClass.class);
+        myAPIclass.getListProducer().enqueue(new Callback<ListProduce>() {
+            @Override
+            public void onResponse(Call<ListProduce> call, Response<ListProduce> response) {
+                if(response.isSuccessful()) {
+                    ListProduce list = response.body();
+                    listProduce = (ArrayList<Produce>) list.getData();
+
+                }else{
+                    Toast.makeText(MainActivity.this, "error",Toast.LENGTH_SHORT).show();
+                }
+                myAdapter.notifyDataSetChanged();
+
+
+            }
+
+            @Override
+            public void onFailure(Call<ListProduce> call, Throwable t) {
+
+            }
+        });
+    }
+
     public Produce getText(){
         Produce pr2 = new Produce();
         pr2.setId(null);
@@ -137,9 +144,6 @@ public class MainActivity extends AppCompatActivity {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Produce pr3 = getText();
-                if(pr3 != null)
-                    listProduce.add(pr3);
                 myAdapter.notifyDataSetChanged();
 
 
