@@ -1,15 +1,16 @@
 package p.pklovestar.bitp_salong.Salon;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ListSalon {
-    public List<TTSalon> data = null;
+    public ArrayList<TTSalon> data = null;
 
-    public List<TTSalon> getData() {
+    public ArrayList<TTSalon> getData() {
         return data;
     }
 
-    public void setData(List<TTSalon> data) {
+    public void setData(ArrayList<TTSalon> data) {
         this.data = data;
     }
 }
