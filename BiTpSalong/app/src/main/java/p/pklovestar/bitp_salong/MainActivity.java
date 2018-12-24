@@ -44,13 +44,6 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setAdapter(myAdapter);
         loadAnswers();
-
-
-
-
-
-
-
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -62,12 +55,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ListSalon> call, Response<ListSalon> response) {
                 if(response.isSuccessful()){
-                    mylist= response.body().getData();
-                    for(int i=0;i<mylist.size();i++){
-                        Log.d("check",""+mylist.get(i).getNameSalon());
+                    mylist.addAll(response.body().getData());
+                    for(int i=0;i<response.body().getData().size();i++){
+                        Log.d("check",""+response.body().getData().get(i).getNameSalon());
                     }
                     myAdapter.notifyDataSetChanged();
                 }
+                else Log.d("check",""+response);
 
 
 
@@ -75,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ListSalon> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "failed",Toast.LENGTH_SHORT).show();
+                Log.d("check",""+t);
 
             }
         });

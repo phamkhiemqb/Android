@@ -1,48 +1,49 @@
 package p.pklovestar.bitp_salong.Salon;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class TTSalon {
+    @SerializedName("_id")
+    @Expose
     public String id;
+    @SerializedName("user_salon")
+    @Expose
     public String userSalon;
+    @SerializedName("name_salon")
+    @Expose
     public String nameSalon;
+    @SerializedName("phone")
+    @Expose
     public String phone;
+    @SerializedName("address")
+    @Expose
     public String address;
+    @SerializedName("city")
+    @Expose
     public String city;
+    @SerializedName("description")
+    @Expose
     public String description;
+    @SerializedName("opening_hours")
+    @Expose
     public String openingHours;
+    @SerializedName("location_lat")
+    @Expose
     public String locationLat;
+    @SerializedName("location_lon")
+    @Expose
     public String locationLon;
+    @SerializedName("relationships")
+    @Expose
+    public Relationships relationships;
+    @SerializedName("image_salon")
+    @Expose
     public List<String> imageSalon = null;
 
     public TTSalon() {
-    }
-
-    public TTSalon(String id, String userSalon, String nameSalon, String phone, String address, String city, String description, String openingHours, String locationLat, String locationLon, List<String> imageSalon) {
-        this.id = id;
-        this.userSalon = userSalon;
-        this.nameSalon = nameSalon;
-        this.phone = phone;
-        this.address = address;
-        this.city = city;
-        this.description = description;
-        this.openingHours = openingHours;
-        this.locationLat = locationLat;
-        this.locationLon = locationLon;
-        this.imageSalon = imageSalon;
-    }
-
-    public TTSalon(String userSalon, String nameSalon, String phone, String address, String city, String description, String openingHours, String locationLat, String locationLon, List<String> imageSalon) {
-        this.userSalon = userSalon;
-        this.nameSalon = nameSalon;
-        this.phone = phone;
-        this.address = address;
-        this.city = city;
-        this.description = description;
-        this.openingHours = openingHours;
-        this.locationLat = locationLat;
-        this.locationLon = locationLon;
-        this.imageSalon = imageSalon;
     }
 
     public String getId() {
@@ -125,6 +126,14 @@ public class TTSalon {
         this.locationLon = locationLon;
     }
 
+    public Relationships getRelationships() {
+        return relationships;
+    }
+
+    public void setRelationships(Relationships relationships) {
+        this.relationships = relationships;
+    }
+
     public List<String> getImageSalon() {
         return imageSalon;
     }
@@ -132,4 +141,24 @@ public class TTSalon {
     public void setImageSalon(List<String> imageSalon) {
         this.imageSalon = imageSalon;
     }
+
+    @Override
+    public String toString() {
+        return "TTSalon{" +
+                "id='" + id + '\'' +
+                ", userSalon='" + userSalon + '\'' +
+                ", nameSalon='" + nameSalon + '\'' +
+                ", phone='" + phone + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", description='" + description + '\'' +
+                ", openingHours='" + openingHours + '\'' +
+                ", locationLat='" + locationLat + '\'' +
+                ", locationLon='" + locationLon + '\'' +
+                ", relationships=" + relationships +
+                ", imageSalon=" + imageSalon +
+                '}';
+    }
 }
+
+
