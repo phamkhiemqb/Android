@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 import p.pklovestar.bitp_salong.R;
@@ -21,6 +23,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
     private Context mContext;
     private List<TTSalon> mSalon;
 
+    public MyAdapter(Context mContext, List<TTSalon> mSalon) {
+        this.mContext = mContext;
+        this.mSalon = mSalon;
+    }
 
     @NonNull
     @Override
@@ -36,7 +42,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         viewHolder.name.setText(mSalon.get(i).getNameSalon());
         viewHolder.address.setText(mSalon.get(i).getAddress());
-        viewHolder.imPhoto.setImageBitmap(mSalon.get(i).getNameSalon());
+        Picasso.get().load(mSalon.get(i).getImageSalon().get(0));
 
     }
 

@@ -132,4 +132,21 @@ public class TTSalon {
     public void setImageSalon(List<String> imageSalon) {
         this.imageSalon = imageSalon;
     }
+
+    @Override
+    public String toString() {
+        return "TTSalon{" +
+                "id='" + id + '\'' +
+                ", userSalon='" + userSalon + '\'' +
+                ", nameSalon='" + nameSalon + '\'' +
+                ", phone='" + phone + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", description='" + description + '\'' +
+                ", openingHours='" + openingHours + '\'' +
+                ", locationLat='" + locationLat + '\'' +
+                ", locationLon='" + locationLon + '\'' +
+                ", imageSalon=" + imageSalon +
+                '}';
+    }
 }

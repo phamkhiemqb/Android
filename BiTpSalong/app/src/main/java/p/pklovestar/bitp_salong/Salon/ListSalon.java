@@ -12,4 +12,11 @@ public class ListSalon {
     public void setData(List<TTSalon> data) {
         this.data = data;
     }
+
+    @Override
+    public String toString() {
+        return "ListSalon{" +
+                "data=" + data +
+                '}';
+    }
 }
