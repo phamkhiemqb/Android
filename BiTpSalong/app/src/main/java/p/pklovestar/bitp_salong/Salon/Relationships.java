@@ -9,4 +9,19 @@ public class Relationships {
     @SerializedName("services")
     @Expose
     public List<Service> services = null;
+
+    public List<Service> getServices() {
+        return services;
+    }
+
+    public void setServices(List<Service> services) {
+        this.services = services;
+    }
+
+    @Override
+    public String toString() {
+        return "Relationships{" +
+                "services=" + services +
+                '}';
+    }
 }

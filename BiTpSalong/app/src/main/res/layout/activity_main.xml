@@ -14,5 +14,4 @@
         android:padding="10dp">
     </android.support.v7.widget.RecyclerView>
 
-
 </LinearLayout>

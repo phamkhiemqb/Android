@@ -15,7 +15,10 @@
 
         </activity>
         <activity android:name=".DetailActivity"
-            android:label="@string/namedetail">
+            android:label="@string/namedetail"
+            android:theme="@style/AppTheme.intent"
+            >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
