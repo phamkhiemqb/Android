@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "583335161768",
+    "firebase_url": "https://android-test-dfcf2.firebaseio.com",
+    "project_id": "android-test-dfcf2",
+    "storage_bucket": "android-test-dfcf2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:583335161768:android:f444e3af353a0320",
+        "android_client_info": {
+          "package_name": "phamkhiemqb.filebbasetest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "583335161768-bpkbibc8ir8gc981e50au2ehdrtc4oqo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_8WoEn5lblXEtDyVMmL13RfCdGms06l8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

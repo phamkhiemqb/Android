@@ -15,6 +15,12 @@ public class Produce implements Serializable {
         this.price = price;
     }
 
+    public Produce(String id, String produce, Integer price) {
+        this.id = id;
+        this.produce = produce;
+        this.price = price;
+    }
+
     public String getId() {
         return id;
     }

@@ -28,6 +28,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
         this.myList = listSalon;
     }
 
+    public MyAdapter(Context mContext, List<TTSalon> mSalon) {
+        this.mContext = mContext;
+        this.mSalon = mSalon;
+    }
 
     @NonNull
     @Override
@@ -41,9 +45,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+<<<<<<< HEAD
+        viewHolder.name.setText(mSalon.get(i).getNameSalon());
+        viewHolder.address.setText(mSalon.get(i).getAddress());
+        Picasso.get().load(mSalon.get(i).getImageSalon().get(0));
+=======
         viewHolder.name.setText(myList.get(i).getNameSalon());
         viewHolder.address.setText(myList.get(i).getAddress());
         Picasso.get().load(myList.get(i).getImageSalon().get(0)).into(viewHolder.imPhoto);
+>>>>>>> 62eb0098467c1c1532c8fad8a25ed5135a90635e
 
     }
 
