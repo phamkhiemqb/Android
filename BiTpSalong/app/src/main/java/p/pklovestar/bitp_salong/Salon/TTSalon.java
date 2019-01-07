@@ -133,6 +133,7 @@ public class TTSalon {
         this.imageSalon = imageSalon;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     @Override
     public String toString() {
@@ -154,6 +155,8 @@ public class TTSalon {
                 ", imageSalon=" + imageSalon +
                 '}';
     }
+=======
+>>>>>>> parent of 62eb009... update bai tap salon
 =======
 >>>>>>> parent of 62eb009... update bai tap salon
 }
