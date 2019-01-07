@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Map API PJ</string>
+    <string name="loading">TITLE</string>
+    <string name="google_maps_key">AIzaSyBjkDO8YqWiNxgAPQ36G7Hrk1O1lkWbLHA</string>
+</resources>

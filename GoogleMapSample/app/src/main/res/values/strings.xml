@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">GoogleMapSample</string>
+    <string name="facebook_app_id">2174191049563867</string>
+    <string name="fb_login_protocol_scheme">fb[2174191049563867]</string>
+</resources>

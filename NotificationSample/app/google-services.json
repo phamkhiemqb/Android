@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "100084088979",
+    "firebase_url": "https://fingernotification.firebaseio.com",
+    "project_id": "fingernotification",
+    "storage_bucket": "fingernotification.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:100084088979:android:1553a73610dfd90c",
+        "android_client_info": {
+          "package_name": "com.example.admin.notificationsample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "100084088979-r81knj85kuh3i1pf8sh86c47e5dffsis.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.admin.notificationsample",
+            "certificate_hash": "bd42501c18c3bda43a900c32b9ab1d8837090069"
+          }
+        },
+        {
+          "client_id": "100084088979-c2i4hpfbb85f5vdbvtmvogetbgro6rj7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB65maprszDGkN8R5Oz_KF5-UjEeqV-Nvw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "100084088979-c2i4hpfbb85f5vdbvtmvogetbgro6rj7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
