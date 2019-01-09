@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tap_text">Chọn ngôn ngữ :</string>
+    <string name="btn_en">Tiếng Anh</string>
+    <string name="btn_ru">Tiếng Nga</string>
+    <string name="btn_ja">Tiếng Nhật</string>
+    <string name="btn_vi">Tiếng Việt</string>
+
+</resources>
