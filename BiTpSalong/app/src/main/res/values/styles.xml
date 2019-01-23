@@ -18,6 +18,11 @@
         <!-- Support library compatibility -->
         <item name="background">@null</item>
     </style>
+    <style name="AppThemeAction" parent="Theme.AppCompat.Light">
+        <item name="android:textColorPrimary">@color/my_text_color</item>
+        <item name="colorPrimary">@android:color/transparent</item>
+        <item name="windowActionBarOverlay">true</item>
+    </style>
 
 
 

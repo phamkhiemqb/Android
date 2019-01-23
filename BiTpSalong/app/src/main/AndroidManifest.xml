@@ -12,21 +12,20 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity"
             android:label="@string/myactivityname">
-<<<<<<< HEAD
-
-        </activity>
-        <activity android:name=".DetailActivity"
-            android:label="@string/namedetail"
-            android:theme="@style/AppTheme.intent"
-            >
-
-=======
->>>>>>> 9f2e7b0f109099f3c293ae98d8916b6eaf10e9fc
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity android:name=".DetailActivity"
+            android:label="@string/namedetail"
+            android:theme="@style/AppThemeAction"
+            >
+
+
+
         </activity>
     </application>
 

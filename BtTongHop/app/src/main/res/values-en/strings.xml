@@ -1,0 +1,34 @@
+<resources>
+    <string name="banhang">Sales</string>
+    <string name="hotro">Support</string>
+    <string name="daotao">Training</string>
+    <string name="canhan">Personal</string>
+    <string name="quenmk"><u>Forgotten password?</u></string>
+    <string name="ttkh">Updating of customer information</string>
+    <string name="ten_dang_nhap">Username</string>
+    <string name="mat_khau">Password</string>
+    <string name="nho_dang_nhap">Login remember</string>
+    <string name="dang_nhap">LOGIN</string>
+    <string name="tai_khoan">Account</string>
+    <string name="doi_mat_khau">Change password</string>
+    <string name="email">Email</string>
+    <string name="ban_do">Map</string>
+    <string name="ngon_ngu">Language</string>
+    <string name="dang_xuat">Sign out</string>
+    <string name="dau_noi_thiet_bi">Device connection</string>
+    <string name="cabin_nguyen_lieu">Fuel calib</string>
+    <string name="dau_noi_lai_sim">Sim Reconnecting</string>
+    <string name="cap_nhat_ttkh">Updating of customer \ninformation</string>
+    <string name="ket_noi_internet_lai">Please check internet connection and try again</string>
+    <string name="ten_dang_nhap_trong">Username is empty</string>
+    <string name="mat_khau_trong">Password is empty</string>
+    <string name="tieng_anh">Vietnamese</string>
+    <string name="tieng_viet">English</string>
+    <string name="mac_dinh">Default(vi)</string>
+    <string name="ok">OK</string>
+    <string name="cancle">Cancle</string>
+    <string name="xac_nhan">Confirm to Logout?</string>
+    <string name="xac_nhan_mess">Are you sure you want to log out?</string>
+    <string name="dang_xuat_thang_cong">Sign out successfully</string>
+
+</resources>

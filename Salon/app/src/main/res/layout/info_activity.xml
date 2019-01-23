@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imgvas"
+        android:layout_width="match_parent"
+        android:layout_height="150dp" />
+
+    <TextView
+        android:id="@+id/txtnamesalon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Namesalon" />
+
+    <TextView
+        android:id="@+id/txtsdt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SDTSALON"
+        />
+
+    <TextView
+        android:id="@+id/txtdcsalon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="DCSALON" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OPENHOURS:"
+        />
+
+    <TextView
+        android:id="@+id/oph"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OPH"
+        />
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:background="#8bed3b"
+        android:text="Booknow"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ABOUT SALON"
+       />
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="174dp"
+        android:text="ABOUT SALON" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SERVICE"
+        android:id="@+id/txtservice"
+        android:layout_gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="name"
+        android:id="@+id/nameservice"
+        android:layout_gravity="center"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Servicetime"
+        android:id="@+id/servicetime"
+        android:layout_gravity="center"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        android:id="@+id/priceservice"
+        android:layout_gravity="center"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:id="@+id/gioithieu"
+        android:layout_gravity="center"
+        />
+</LinearLayout>
+</ScrollView>

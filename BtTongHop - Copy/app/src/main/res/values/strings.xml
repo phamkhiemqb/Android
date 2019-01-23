@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Bài tập tổng hợp</string>
+    <string name="banhang">Bán hàng</string>
+    <string name="hotro">Hỗ trợ</string>
+    <string name="daotao">Đào tạo</string>
+    <string name="canhan">Cá nhân</string>
+    <string name="quenmk"><u>Quên mật khẩu?</u></string>
+    <string name="ttkh">Cập nhập thông tin khách hàng</string>
+
+</resources>

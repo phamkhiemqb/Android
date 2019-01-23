@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/group_4">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/group_7"
+            android:scaleY="0.5"
+            android:scaleX="0.5"/>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/boder"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shapekey"
+                android:scaleX="0.8"
+                android:scaleY="0.8"/>
+            <android.support.design.widget.TextInputLayout
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/edt_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:inputType="text"
+                    android:background="@android:drawable/screen_background_light_transparent"
+                    android:layout_gravity="center_vertical"
+                    android:hint="@string/ten_dang_nhap"
+                    android:padding="10dp"/>
+            </android.support.design.widget.TextInputLayout>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/boder"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape1"
+                android:scaleX="0.8"
+                android:scaleY="0.8"/>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true">
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edt_pass"
+                    android:background="@android:drawable/screen_background_light_transparent"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="18dp"
+                    android:inputType="textPassword"
+                    android:padding="10dp"
+                    android:hint="@string/mat_khau"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <!--<EditText-->
+                <!--android:inputType="textPassword"-->
+                <!--android:id="@+id/edt_pass"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="18dp"-->
+                <!--android:background="@android:drawable/screen_background_light_transparent"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:hint="Mật khẩu "-->
+                <!--android:padding="10dp" />-->
+            <!--<ImageView-->
+                <!--android:id="@+id/img_showpass"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:scaleX="0.7"-->
+                <!--android:scaleY="0.7"-->
+                <!--android:background="@drawable/shape"/>-->
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/check_savelogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="1dp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="17dp"
+                android:layout_gravity="center_vertical"
+                android:text="Nhớ đăng nhập"
+                android:padding="10dp"/>
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="17dp"
+                android:layout_gravity="center_vertical"
+                android:text="@string/quenmk"
+                android:textStyle="normal"
+                android:padding="10dp"/>
+
+
+        </LinearLayout>
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="@string/dang_nhap"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:background="@drawable/bg2" />
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Copyright 2019 by Viettel"
+        android:textSize="18dp"
+        android:paddingBottom="20dp"/>
+
+
+
+
+</LinearLayout>

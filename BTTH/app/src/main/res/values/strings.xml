@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">App Bán Hàng</string>
+    <string name="banhang">Bán hàng</string>
+    <string name="hotro">Hộ trở</string>
+    <string name="daotao">Đào tạo</string>
+    <string name="canhan">Cá nhân</string>
+    <string name="quenmk"><u>Quên mật khẩu?</u></string>
+
+</resources>

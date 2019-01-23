@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:gravity="center">
+
+    <LinearLayout
+        android:id="@+id/lnrOtpContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter OTP"
+            android:textSize="20sp"
+            android:padding="10dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:weightSum="1">
+
+            <EditText
+                android:id="@+id/edtFirstOtp"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25"
+                android:maxLength="1"
+                android:inputType="number"
+                android:gravity="center"
+                android:textSize="25sp"
+                android:ems="1"/>
+
+            <EditText
+                android:id="@+id/edtSecondOtp"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25"
+                android:maxLength="1"
+                android:textSize="25sp"
+
+                android:inputType="number"
+                android:gravity="center"
+                android:ems="1"/>
+
+            <EditText
+                android:id="@+id/edtThirdOtp"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25"
+                android:inputType="number"
+                android:gravity="center"
+                android:maxLength="1"
+                android:textSize="25sp"
+                android:ems="1"/>
+
+            <EditText
+                android:id="@+id/edtFourthOtp"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25"
+                android:inputType="number"
+                android:gravity="center"
+                android:maxLength="1"
+                android:textSize="25sp"
+                android:ems="1"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/btnResendOtp"
+        android:layout_below="@+id/lnrOtpContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:background="@android:color/transparent"
+        android:text="Resend OTP"/>
+</RelativeLayout>

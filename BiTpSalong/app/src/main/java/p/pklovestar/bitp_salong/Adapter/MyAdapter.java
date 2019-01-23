@@ -23,15 +23,19 @@ import p.pklovestar.bitp_salong.Salon.TTSalon;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
     private Context mContext;
     List<TTSalon> myList;
+    private OnLongClickItem onLongClickItem;
     public MyAdapter(Context context, List<TTSalon> listSalon){
         this.mContext = context;
         this.myList = listSalon;
     }
+    public interface OnLongClickItem{
+        void longClickItem(View view, int i );
 
-    public MyAdapter(Context mContext, List<TTSalon> mSalon) {
-        this.mContext = mContext;
-        this.mSalon = mSalon;
     }
+    public void setOnLongClickItem(OnLongClickItem onLongClickItem){
+        this.onLongClickItem = onLongClickItem;
+    }
+
 
     @NonNull
     @Override
@@ -45,15 +49,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-<<<<<<< HEAD
-        viewHolder.name.setText(mSalon.get(i).getNameSalon());
-        viewHolder.address.setText(mSalon.get(i).getAddress());
-        Picasso.get().load(mSalon.get(i).getImageSalon().get(0));
-=======
         viewHolder.name.setText(myList.get(i).getNameSalon());
         viewHolder.address.setText(myList.get(i).getAddress());
         Picasso.get().load(myList.get(i).getImageSalon().get(0)).into(viewHolder.imPhoto);
->>>>>>> 62eb0098467c1c1532c8fad8a25ed5135a90635e
 
     }
 
@@ -69,12 +67,19 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
         ImageView imPhoto;
         Button btnBook;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull final View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.it_txt_title);
             address = itemView.findViewById(R.id.it_txt_address);
             imPhoto = itemView.findViewById(R.id.it_image);
             btnBook = itemView.findViewById(R.id.it_btn_book);
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    onLongClickItem.longClickItem(itemView,getAdapterPosition());
+                    return false;
+                }
+            });
         }
     }
 }

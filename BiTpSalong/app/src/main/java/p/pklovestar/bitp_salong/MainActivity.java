@@ -1,5 +1,6 @@
 package p.pklovestar.bitp_salong;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.ActionBar;
@@ -9,7 +10,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
+import android.view.View;
 import android.widget.Toast;
+
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,13 +48,16 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setAdapter(myAdapter);
         loadAnswers();
-
-
-
-
-
-
-
+        myAdapter.setOnLongClickItem(new MyAdapter.OnLongClickItem() {
+            @Override
+            public void longClickItem(View view, int i) {
+                Intent intent1 = new Intent(MainActivity.this, DetailActivity.class);
+                Gson gson = new Gson();
+                String data = gson.toJson(mylist.get(i));
+                intent1.putExtra("data",data);
+                startActivity(intent1);
+            }
+        });
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -62,12 +69,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ListSalon> call, Response<ListSalon> response) {
                 if(response.isSuccessful()){
-                    mylist= response.body().getData();
-                    for(int i=0;i<mylist.size();i++){
-                        Log.d("check",""+mylist.get(i).getNameSalon());
+                    mylist.addAll(response.body().getData());
+                    for(int i=0;i<response.body().getData().size();i++){
+                        Log.d("check",""+response.body().getData().get(i).getNameSalon());
                     }
                     myAdapter.notifyDataSetChanged();
                 }
+                else Log.d("check",""+response);
 
 
 
@@ -75,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ListSalon> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "failed",Toast.LENGTH_SHORT).show();
+                Log.d("check",""+t);
 
             }
         });

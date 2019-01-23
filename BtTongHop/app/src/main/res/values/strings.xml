@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name" translatable="false">Bài tập tổng hợp</string>
+    <string name="banhang">Bán hàng</string>
+    <string name="hotro">Hỗ trợ</string>
+    <string name="daotao">Đào tạo</string>
+    <string name="canhan">Cá nhân</string>
+    <string name="quenmk"><u>Quên mật khẩu?</u></string>
+    <string name="ttkh">Cập nhập thông tin khách hàng</string>
+    <string name="ten_dang_nhap">Tên đăng nhập</string>
+    <string name="mat_khau">Mật khẩu</string>
+    <string name="nho_dang_nhap">Nhớ đăng nhập</string>
+    <string name="dang_nhap">ĐĂNG NHẬP</string>
+    <string name="tai_khoan">Tài khoản</string>
+    <string name="doi_mat_khau">Đổi mật khẩu</string>
+    <string name="email">email</string>
+    <string name="ban_do">Bản đồ</string>
+    <string name="ngon_ngu">Ngôn ngữ</string>
+    <string name="dang_xuat">Đăng xuất</string>
+    <string name="dau_noi_thiet_bi">Đấu nối thiết bị</string>
+    <string name="cabin_nguyen_lieu">Calib nhiên liệu</string>
+    <string name="dau_noi_lai_sim">Đấu nối lại sim</string>
+    <string name="cap_nhat_ttkh">Cập nhật thông tin \nkhách hàng</string>
+    <string name="ket_noi_internet_lai">Vui lòng kiểm tra kêt nối internet và thử lai</string>
+    <string name="ten_dang_nhap_trong">Tên đăng nhập trống</string>
+    <string name="mat_khau_trong">Mật khẫu trống</string>
+    <string name="tieng_anh">Tiếng Việt</string>
+    <string name="tieng_viet">Tiếng Anh</string>
+    <string name="mac_dinh">Mặc định(vi)</string>
+    <string name="ok">OK</string>
+    <string name="cancle">Hủy</string>
+    <string name="xac_nhan">Xác nhận đăng xuất?</string>
+    <string name="xac_nhan_mess">Bạn có chắc chắn đăng xuât?</string>
+    <string name="dang_xuat_thang_cong">Đăng xuấ thành công</string>
+
+
+
+
+
+
+
+</resources>

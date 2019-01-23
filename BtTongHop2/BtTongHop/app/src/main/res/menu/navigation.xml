@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mn_banhang"
+        android:icon="@drawable/banhang_icon"
+        android:title="@string/banhang" />
+
+    <item
+        android:id="@+id/mn_hotro"
+        android:icon="@drawable/hotro_icon"
+        android:title="@string/hotro" />
+
+    <item
+        android:id="@+id/mn_daotao"
+        android:icon="@drawable/daotao_icon"
+        android:title="@string/daotao" />
+    <item
+        android:id="@+id/mn_canhan"
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title="@string/canhan" />
+
+</menu>
