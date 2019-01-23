@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tap_text">Select any language below :</string>
+    <string name="btn_en">English</string>
+    <string name="btn_ru">Russian</string>
+    <string name="btn_ja">Japanese</string>
+    <string name="btn_vi">Vietnamese</string>
+</resources>

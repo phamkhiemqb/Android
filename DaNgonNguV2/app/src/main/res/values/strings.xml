@@ -1,0 +1,12 @@
+
+<resources>
+    <string name="app_name" translatable="false">Da Ngon Ngu V2</string>
+
+    <string name="tap_text">Select any language below :</string>
+    <string name="btn_en">English</string>
+    <string name="btn_ru">Russian</string>
+    <string name="btn_ja">Japan</string>
+    <string name="btn_vi">Vietnam</string>
+
+</resources>
+
